@@ -55,6 +55,13 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
     implementation "com.squareup.okhttp3:logging-interceptor:$logging_interceptor_version"
 
+    // Koin main features for Android (Scope,ViewModel ...)
+    implementation "io.insert-koin:koin-android:${koin_version}"
+    // Koin Android - experimental builder extensions
+    implementation "io.insert-koin:koin-android-ext:${koin_version}"
+    // Koin for Jetpack WorkManager
+    implementation "io.insert-koin:koin-androidx-workmanager:${koin_version}"
+
     //Material design
     implementation "com.google.android.material:material:$material_design_version"
     implementation "com.android.support:design:$material_support_design_version"
