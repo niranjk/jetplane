@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Jetplane</string>
+    <string name="title_activity_article">Jetplane App</string>
 </resources>
