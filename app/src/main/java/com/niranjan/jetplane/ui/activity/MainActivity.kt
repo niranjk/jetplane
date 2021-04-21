@@ -3,8 +3,7 @@ package com.niranjan.jetplane.ui.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.compose.setContent
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import com.niranjan.jetplane.ui.components.ArticleScreenCompose
 import com.niranjan.jetplane.ui.viewmodel.ArticleViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -14,11 +13,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            MaterialTheme {
-                Text(text = "hello")
-            }
-        }
         viewModel.getArticles()
         setResultObserving()
     }
@@ -26,11 +20,9 @@ class MainActivity : AppCompatActivity() {
     private fun setResultObserving() {
         viewModel.articleLiveData.observe(
             this,
-            {
+            {   data ->
                 setContent {
-                    MaterialTheme {
-                        Text(text = "hello")
-                    }
+                    ArticleScreenCompose(articleList = data)
                 }
             }
         )
